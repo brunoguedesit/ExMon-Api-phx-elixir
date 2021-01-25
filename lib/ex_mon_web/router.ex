@@ -26,10 +26,9 @@ defmodule ExMonWeb.Router do
     end
   end
 
-    scope "/", ExMonWeb do
-      pipe_through :api
+  scope "/", ExMonWeb do
+    pipe_through :api
 
-      get "/", WelcomeController, :index
-
-    end
+    get "/", WelcomeController, :index
+  end
 end

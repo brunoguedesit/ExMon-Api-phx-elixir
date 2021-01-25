@@ -1,5 +1,4 @@
 defmodule ExMonWeb.FallbackController do
-
   use ExMonWeb, :controller
 
   def call(conn, {:error, result}) do

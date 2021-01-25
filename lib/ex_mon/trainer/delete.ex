@@ -1,5 +1,4 @@
 defmodule ExMon.Trainer.Delete do
-
   alias ExMon.{Trainer, Repo}
   alias Ecto.UUID
 
