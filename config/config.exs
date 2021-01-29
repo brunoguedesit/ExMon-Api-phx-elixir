@@ -32,7 +32,7 @@ import_config "#{Mix.env()}.exs"
 
 config :ex_mon, ExMonWeb.Auth.Guardian,
 issuer: "ex_mon",
-secret_key: "mB3eAKVLQRT3D6OJwCsB6njleNYTkkgoxGKNmd2WwXKBRaEGHVUKBD1uTC4rfV17"
+secret_key: System.fetch_env!("GUARDIAN_SECRET_KEY")
 
 config :ex_mon, ExMonWeb.Auth.Pipeline ,
   module: ExMonWeb.Auth.Guardian,
