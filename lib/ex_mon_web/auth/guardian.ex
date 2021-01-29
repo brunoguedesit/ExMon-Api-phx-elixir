@@ -19,9 +19,10 @@ defmodule ExMonWeb.Auth.Guardian do
       nil -> {:error, "Trainer not found!"}
       trainer -> validate_password(trainer, password)
     end
+  end
 
     def validate_password(%Trainer{password_hash: hash} = trainer, password) do
-      case Argon2.verify_pass(password, hash)
+      case Argon2.verify_pass(password, hash) do
         true -> create_token(trainer)
         false -> {:error, :unauthorized}
       end
@@ -31,6 +32,4 @@ defmodule ExMonWeb.Auth.Guardian do
       {:ok, token, _claims} = encode_and_sign(trainer)
       {:ok, token}
     end
-
-  end
 end
